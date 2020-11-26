@@ -1,0 +1,21 @@
+       try {
+            UsuarioDAO userDao = new UsuarioDAO();
+            
+            
+            if(userDao.ChecarLogin(txtLogin.getText(), txtSenha.getText())){
+                
+                Monitoramento tela = new Monitoramento();
+                tela.abrirTela(txtLogin.getText(), txtSenha.getText(), logs);
+                this.dispose();
+                
+            }else{
+            
+                JOptionPane.showMessageDialog(null, "Usuário ou Senha incorretos");
+                logs.gravarLog("Login ou senha invalidos", "Sistema de login");
+                               
+            }  
+              
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro desconhecido, entre em contato com a central de atendimentos.");
+            logs.gravarLog(e.toString(),"Sistema de Login");
+        }    
