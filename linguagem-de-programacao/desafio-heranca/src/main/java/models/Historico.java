@@ -20,6 +20,10 @@ public class Historico {
         this.operacao = operacao;
     }
 
+    Historico(Integer dia, Integer mes, Integer ano, Double valor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Integer getDia() {
         return dia;
     }
@@ -64,7 +68,7 @@ public class Historico {
     public String toString() {
         return "\n\nHistorico: "
                 +"\nDia: " + dia + 
-                "\nMês=" + mes + 
+                "\nMês: " + mes + 
                 "\nAno: " + ano + 
                 "\nValor: " + valor + 
                 "\nOperacao:" + operacao;

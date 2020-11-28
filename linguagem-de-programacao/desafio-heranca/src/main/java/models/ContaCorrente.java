@@ -1,5 +1,6 @@
 package models;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,6 @@ public class ContaCorrente {
     private Double saldo;
     private List<Historico> listHistorico; 
     
-    Historico h1 = new Historico(05, 12, 2020, 50.00, "Vinicius");
     
     
    
@@ -25,30 +25,31 @@ public class ContaCorrente {
     
     
     public void depositar(Double valor,Integer dia, Integer mes, Integer ano){
+        saldo+=valor;
+        
+        Historico ocorrencia = new Historico(dia, mes, ano, valor, "Deposito");
+        
+      listHistorico.add(ocorrencia);
       
-        for (Historico historico : listHistorico) {
-            System.out.println(String.format("\n\nOperação: Deposito"
-                                        +"\nSaldo anterior: %.2f"
-                                        +"\nValor deposito: %.2f"
-                                        +"\nSaldo atual: %.2f"
-                                        +"\nData %d/%d/%d" , saldo,valor, saldo+=valor, dia, mes, ano ));
+    
+
+        }
+    
+    public void sacar(Double valor,Integer dia, Integer mes, Integer ano){
+       if(saldo < valor){
+           System.out.println("Saldo insuficiente");
+       }else{
+        saldo-=valor;
+        
+        Historico ocorrencia = new Historico(dia, mes, ano, valor, "Sacar");
+        
+      listHistorico.add(ocorrencia);
+       } 
+    
+
         }
 
 
-        
-        listHistorico.add(h1);
-        
-    }
-    
-    
-    public void sacar(Double valor,Integer dia, Integer mes, Integer ano){
-        System.out.println(String.format("\n\nOperação: Saque"
-                                        +"\nSaldo anterior: %.2f"
-                                        +"\nValor deposito: %.2f"
-                                        +"\nSaldo atual: %.2f"
-                                        +"\nData %d/%d/%d" , saldo,valor, saldo-=valor, dia, mes, ano )); 
-    }
-    
     public void exibirExtrato(){
         for (Historico historico : listHistorico) {
             System.out.println(historico);
@@ -78,6 +79,16 @@ public class ContaCorrente {
     public void setListHistorico(List<Historico> listHistorico) {
         this.listHistorico = listHistorico;
     }
+
+    @Override
+    public String toString() {
+        
+        return "Extrato: "+ listHistorico +
+                "\nSaldo atual: "+ getSaldo();
+                
+    }
+    
+    
     
     
 }
