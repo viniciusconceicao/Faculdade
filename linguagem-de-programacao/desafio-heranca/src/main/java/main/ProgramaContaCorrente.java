@@ -15,7 +15,7 @@ public class ProgramaContaCorrente {
        cc1.sacar(2000.00, 21, 3,2020);
        cc1.sacar(30.00, 16, 05, 2020);
        
-        System.out.println(cc1.toString());
+        System.out.println(cc1.exibirExtrato());
         
         
         

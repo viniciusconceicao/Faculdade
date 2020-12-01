@@ -37,7 +37,7 @@ public class ContaCorrente {
     
     public void sacar(Double valor,Integer dia, Integer mes, Integer ano){
        if(saldo < valor){
-           System.out.println("Saldo insuficiente");
+           System.out.println("Saldo insuficiente para saque, seu saldo disponível é: "+ saldo);
        }else{
         saldo-=valor;
         
@@ -48,12 +48,11 @@ public class ContaCorrente {
     
 
         }
+ 
 
 
-    public void exibirExtrato(){
-        for (Historico historico : listHistorico) {
-            System.out.println(historico);
-        }
+    public String exibirExtrato(){
+       return this.toString();
     }
 
     public String getTitular() {
