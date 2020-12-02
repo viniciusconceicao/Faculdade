@@ -56,13 +56,16 @@ public class VendedorComissao {
     //toString
     @Override
     public String toString() {
-        return String.format("\n" +
-                 "\nVendedor Comissao " + 
-                 "\nCódigo: %d " +
-                 "\nNome: %s" +
-                 "\nVendas: %.2f" +
-                 "\nTaxa: 10" + 
-                 "\nSalário: %2.f", codigo, nome, vendas, calculaSalario());
+        return  String.format("%3d%25s%10.2f%10.2f%10.2f", codigo, nome,vendas,taxa,calculaSalario());
+                            
+                
+//                "\n" +
+//                 "\nVendedor Comissao " + 
+//                 "\nCódigo: " + codigo +
+//                 "\nNome: " + nome +
+//                 "\nVendas: " + vendas + 
+//                 "\nTaxa: 10" + 
+//                 "\nSalário: " + calculaSalario();
     }
     
      

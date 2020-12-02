@@ -15,7 +15,7 @@ public class VendedorComissaoMaisFixo extends VendedorComissao{
 
     public VendedorComissaoMaisFixo(String nome) {
         super(nome);
-        this.salarioFixo = getAleatorio().nextDouble()*100;
+        this.salarioFixo = getAleatorio().nextDouble()*300;
     }
 
     @Override
@@ -32,7 +32,8 @@ public class VendedorComissaoMaisFixo extends VendedorComissao{
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return super.toString() + 
+                String.format("%10.2f",salarioFixo); //To change body of generated methods, choose Tools | Templates.
     }
     
     }
