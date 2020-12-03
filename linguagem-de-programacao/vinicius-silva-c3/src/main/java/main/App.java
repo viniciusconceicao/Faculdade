@@ -1,4 +1,8 @@
-package models;
+package main;
+
+import models.Academia;
+import models.Instrutor;
+import models.Personal;
 
 /**
  *
