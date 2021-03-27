@@ -5,7 +5,7 @@ public class teste {
 
 
     public static void main(String[] args) {
-        ListaEstatica lista = new ListaEstatica(5);
+        ListaEstatica lista = new ListaEstatica(9);
 
         System.out.println("Adicionando valores");
         System.out.println( lista.adiciona(2));
@@ -18,7 +18,7 @@ public class teste {
         System.out.println("");
 
 
-        System.out.println("Atualizando a lista");
+        System.out.println("buscando valor");
         System.out.println(lista.buscar(2)+"\n\n");
 
 
@@ -36,6 +36,32 @@ public class teste {
         System.out.println("Atualizando após remover elemento");
         lista.exibe();
         System.out.println("");
+
+        System.out.println("Substituindo valores");
+        System.out.println(lista.substituir(6, 9));
+        System.out.println("");
+        System.out.println("");
+
+        System.out.println("Atualizando lista");
+        lista.exibe();
+        System.out.println("");
+        System.out.println("");
+
+        System.out.println("Adicionando mais valores");
+        lista.adiciona(7);
+        lista.adiciona(7);
+        lista.adiciona(7);
+        lista.adiciona(7);
+
+        System.out.println("Exibindo lista atualizada");
+        lista.exibe();
+        System.out.println("");
+        System.out.println("");
+
+        System.out.println("Contando valores repetidos");
+        System.out.println(lista.contarOcorrencias(7));
+
+
     }
 
 }

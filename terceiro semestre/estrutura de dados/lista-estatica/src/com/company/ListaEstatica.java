@@ -64,4 +64,29 @@ public class ListaEstatica {
         return removerPeloIndice(buscar(valor));
     }
 
+
+
+    public Boolean substituir(Integer valorAntigo, Integer novoValor){
+
+        for (int i = 0; i < vetor.length; i++) {
+            if (valorAntigo.equals(vetor[i])){
+                vetor[i] = novoValor;
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    Integer contador;
+    public Integer contarOcorrencias(Integer valor){
+
+        for (int i = 0; i < ultimaPosicao; i++) {
+            
+        }
+
+
+        return contador;
+    }
+
 }
