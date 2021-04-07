@@ -3,20 +3,25 @@ package com.company;
 import com.company.domain.Aluno;
 import com.company.services.ListaObj;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Formatter;
+import java.util.FormatterClosedException;
 import java.util.Scanner;
 
-public class testeListaAluno {
+public class TesteListaGravaAluno {
+
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        ListaObj listaObj = new ListaObj(10);
+        ListaObj<Aluno> lista;
 
         Boolean fim = false;
 
 
         Integer raAluno, escolhaInput, entrada;
-        String nomeAluno;
+        String nomeAluno, nomeArquivo;
         Double notaAluno;
 
 
@@ -24,11 +29,14 @@ public class testeListaAluno {
 
             System.out.println("Informe um número:");
 
-             System.out.println("1. Adicionar aluno" +
+            System.out.println("1. Adicionar aluno" +
                     "\n2. Exibir lista" +
                     "\n3. Exibir um aluno da lista" +
-                    "\n4. Limpar lista" +
-                    "\n5. Fim");
+                    "\n4. Gravar a lista em um arquivo .txt" +
+                    "\n5. Gravar a lista em um arquivo .csv" +
+                    "\n6. Ler e exibir o arquivo .txt" +
+                    "\n7. Ler e exibir o arquivo .csv" +
+                    "\n8. Fim");
 
             entrada = input.nextInt();
 
@@ -42,23 +50,22 @@ public class testeListaAluno {
                     notaAluno = input.nextDouble();
 
                     Aluno aluno = new Aluno(raAluno, nomeAluno, notaAluno);
-                    System.out.println("Aluno adicionado: "+listaObj.adiciona(aluno));
+                    System.out.println("Aluno adicionado: "+lista.adiciona(aluno));
 
                     break;
 
                 case 2:
-                    listaObj.exibe();
+                    lista.exibe();
                     break;
 
                 case 3:
                     System.out.println("Informe o indice do aluno.");
                     escolhaInput = input.nextInt();
-                    System.out.println(listaObj.getElemento(escolhaInput));
+                    System.out.println(lista.getElemento(escolhaInput));
                     break;
 
                 case 4:
-                    listaObj.limpar();
-                    break;
+
 
                 case 5:
                     fim = true;
@@ -76,7 +83,6 @@ public class testeListaAluno {
 
 
     }
-
 
 
 }

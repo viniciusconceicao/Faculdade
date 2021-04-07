@@ -1,5 +1,9 @@
 package com.company.services;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Formatter;
+
 public class ListaObj <T> {
 
 
@@ -24,7 +28,7 @@ public class ListaObj <T> {
     }
 
     public void exibe() {
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < ultimaPosicao; i++) {
             System.out.println(vetor[i]);
         }
     }
@@ -88,7 +92,12 @@ public class ListaObj <T> {
     public T getElemento(Integer indice){
         for (int i = 0; i < ultimaPosicao; i++) {
             if (indice < 0 || indice > ultimaPosicao){
+
                 return (T) "Indice inválido";
+            }
+
+            else if (indice.equals(null)){
+                return (T) "Não possui aluno cadastrado nessa posição";
             }
 
         }
@@ -97,6 +106,9 @@ public class ListaObj <T> {
 
     public void limpar(){
         ultimaPosicao = 0;
+    }
+
+
     }
 
 
